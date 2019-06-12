@@ -19,7 +19,7 @@ public class Teste {
         for(int x=0; x < 10;x++){
             System.out.println("Valor do x = " + x);
         }
-        System.out.println("Jose e gay");
+        System.out.println("Thiago e gay");
     }
     
 }
