@@ -7,7 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class evento {
     
     @RequestMapping("/")
-    String teste(){
+    public String teste(){
         return "teste";
+    }
+    
+    @RequestMapping("/inicial")
+    public String inicial(){
+        return "inicial";
     }
 }
