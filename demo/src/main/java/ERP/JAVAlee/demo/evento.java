@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class evento {
     
-    /*@RequestMapping("/")
+    @RequestMapping("/")
     public String teste(){
     	System.out.println("Entrou no principal!!");
-        return "teste";
-    }*/
+        return "index.html";
+    }
     
     @RequestMapping("/inicial")
     public String inicial(){
     	System.out.println("Entrou no inicial!!");
-        return "PORQUE ESSA MERDA NAO FUNCIONA CARALHO!";
+        return "dataagr.jsp";
     }
 }
