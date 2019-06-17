@@ -7,8 +7,11 @@
 <title>Titulo</title>
 </head>
 <body>
-	<h1>Foi caramba!!</h1>
-	<p>Data atual:</p>
-	<%= new java.util.Date() %>
+	<h1>Versão com java!!</h1>
+	<p>Nome Salvo:</p>
+	<p><%= new java.util.Date() %></p>
+	<label for='nome'>Insira seu nome:</label>
+	<br>
+	<input type='text'/>
 </body>
 </html>
