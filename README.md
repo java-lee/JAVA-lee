@@ -1,3 +1,3 @@
 # JAVA-lee
-Teste do gitHub e projetos
-Talvez deu certo
+Estudo com SpringBot, mais focado em java
+Quem sabe um dia a gente faz uma ERP...
