@@ -1,0 +1,140 @@
+@charset "ISO-8859-1";
+
+$cem : 100%;
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+	header nav {
+	    width: $cem;
+	    height: 70px;
+	    background-color: black;
+
+	    #logo {
+	    	width: 140px;
+	    	float: left;
+	    	display: none;
+	    	img {
+	    		width: $cem;
+	    	}
+	    }
+
+	    #barraMobile{
+	    	i {
+	    		margin: 10px;
+	    		cursor: pointer;
+		    	color: white;
+		    	font-size: 3em;
+		    	float: left;
+	    	}
+	    }
+
+	    ul {
+	        display: none;
+	        height: $cem;
+
+	        li {
+	            display: inline-block;
+	            list-style: none;
+	            width: 100px;
+	            font-size: 1.2em;
+	            color: white;
+	        }
+	    }
+
+	    #cliente {
+		    font-size: 2em;
+		    float: right;
+		    margin-top: 15px;
+		    margin-right: 5px;
+		    color: white;
+		    width: 300px;
+		    text-align: center;
+		    cursor: pointer;
+
+		    #statusCliente {
+		        font-size: 0.6em;
+		        cursor: pointer;
+
+		        i {
+		            font-size: 1.5em;
+		        }
+		    }
+		    #checkbox {
+		    display: none;
+
+			    &:checked + #opcoesUsuario {
+			        display: block;
+			    }
+			}
+
+			#opcoesUsuario {
+			    margin-top: 22px;
+			    display: none;
+			    border: 2px solid black;
+			    border-top: 0px;
+			    cursor: default;
+			    background-color: #43414c;
+			    a {
+		    		text-decoration: none;
+		    		.opcao {
+					    cursor: pointer;
+					    color: white;
+					    overflow: hidden;
+					    width: 300px;
+					    height: 60px;
+					    line-height: 60px;
+					    vertical-align: middle;
+					    border-bottom: 2px solid black;
+					}
+				}
+			}
+		}
+
+		#carrinho {
+		    font-size: 1.5em;
+		    float: right;
+		    margin-right: 30px;
+		    margin-top: 4px;
+		    color: white;
+		    width: 100px;
+		    cursor: pointer;
+		    text-align: right;
+
+		    #info {
+		        width: $cem;
+		    }
+
+		    span {
+		        font-size: 0.6em;
+		    }
+
+		    #qtdProdutos {
+		        font-size: 0.5em;
+		    }
+		}
+	}
+}
+
+@media screen and (min-width: 900px) {
+    body { 
+    	header {
+	    	nav{
+	    		ul {
+	    			display: inline-block;
+	    		}
+
+	    		#logo {
+	    			display: block;
+	    		}
+		    	#barraMobile {
+		    		i {
+		 	       		display: none;
+		    		}
+		    	}
+	    	}
+    	}
+    }
+}

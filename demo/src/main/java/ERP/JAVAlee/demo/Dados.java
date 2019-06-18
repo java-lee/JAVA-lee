@@ -1,4 +1,4 @@
-package ERP.JAVAlee.demo;
+/*package ERP.JAVAlee.demo;
 
 import java.io.Serializable;
 
@@ -32,4 +32,4 @@ public class Dados implements Serializable{
 		this.id = id;
 	}
 	
-}
+}*/

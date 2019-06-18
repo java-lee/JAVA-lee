@@ -10,7 +10,7 @@ public class evento {
     @RequestMapping("/")
     public String teste(){
     	System.out.println("Entrou no principal!!");
-        return "index.html";
+        return "paginaInicial.html";
     }
     
     @RequestMapping("/inicial")

@@ -1,0 +1,91 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden; }
+  body header nav {
+    width: 100%;
+    height: 70px;
+    background-color: black; }
+    body header nav #logo {
+      width: 140px;
+      float: left;
+      display: none; }
+      body header nav #logo img {
+        width: 100%; }
+    body header nav #barraMobile i {
+      margin: 10px;
+      cursor: pointer;
+      color: white;
+      font-size: 3em;
+      float: left; }
+    body header nav ul {
+      display: none;
+      height: 100%; }
+      body header nav ul li {
+        display: inline-block;
+        list-style: none;
+        width: 100px;
+        font-size: 1.2em;
+        color: white; }
+    body header nav #cliente {
+      font-size: 2em;
+      float: right;
+      margin-top: 15px;
+      margin-right: 5px;
+      color: white;
+      width: 300px;
+      text-align: center;
+      cursor: pointer; }
+      body header nav #cliente #statusCliente {
+        font-size: 0.6em;
+        cursor: pointer; }
+        body header nav #cliente #statusCliente i {
+          font-size: 1.5em; }
+      body header nav #cliente #checkbox {
+        display: none; }
+        body header nav #cliente #checkbox:checked + #opcoesUsuario {
+          display: block; }
+      body header nav #cliente #opcoesUsuario {
+        margin-top: 22px;
+        display: none;
+        border: 2px solid black;
+        border-top: 0px;
+        cursor: default;
+        background-color: #43414c; }
+        body header nav #cliente #opcoesUsuario a {
+          text-decoration: none; }
+          body header nav #cliente #opcoesUsuario a .opcao {
+            cursor: pointer;
+            color: white;
+            overflow: hidden;
+            width: 300px;
+            height: 60px;
+            line-height: 60px;
+            vertical-align: middle;
+            border-bottom: 2px solid black; }
+    body header nav #carrinho {
+      font-size: 1.5em;
+      float: right;
+      margin-right: 30px;
+      margin-top: 4px;
+      color: white;
+      width: 100px;
+      cursor: pointer;
+      text-align: right; }
+      body header nav #carrinho #info {
+        width: 100%; }
+      body header nav #carrinho span {
+        font-size: 0.6em; }
+      body header nav #carrinho #qtdProdutos {
+        font-size: 0.5em; }
+
+@media screen and (min-width: 900px) {
+  body header nav ul {
+    display: inline-block; }
+  body header nav #logo {
+    display: block; }
+  body header nav #barraMobile i {
+    display: none; } }
+
+/*# sourceMappingURL=paginaInicial.css.map */

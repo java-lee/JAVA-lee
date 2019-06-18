@@ -1,4 +1,4 @@
-package ERP.JAVAlee.demo;
+/*package ERP.JAVAlee.demo;
 
 import javax.sql.DataSource;
 
@@ -31,4 +31,4 @@ public class bancoDeDados {
 		adapter.setPrepareConnection(true);
 		return adapter;
 	}
-}
+}*/

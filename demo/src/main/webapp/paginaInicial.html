@@ -3,15 +3,19 @@
 <title>Titulo bonito</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="arquivosCss/paginaInicial.css">
 </head>
 <body>
 	<script src="https://kit.fontawesome.com/1e622caf46.js"></script>
+	
 	<header>
 		<nav>
 			<div id="logo">
-				<img src=''/>
+				<img src='icones/logo.png'/>
 			</div>
-			<i class="fas fa-bars"></i>
+			<div id="barraMobile">
+				<i class="fas fa-bars"></i>
+			</div>
 			<ul>
 				<li>Pagina Inicial</li>
 				<li></li>
@@ -23,30 +27,18 @@
 				<label id="statusCliente" for="checkbox">
 					<!-- Icone do simbolo do cliente -->
 					<i class="fas fa-user"></i>
-						<%= 
-						public voi
-
-						if(pessoaEstaLogada()){
-						System.out.prinln("Logado como " + primeiroNomePessoa)
-						} else {
-						System.out.prinln("Fazer login/Cadastrar")
-						%>
+					Logado como xxx
 					<!-- Setinha para baixo -->
 					<i class="fas fa-sort-down"></i>
 				</label>
 					<input type="checkbox" id="checkbox">
 					<div id="opcoesUsuario">
-						<%= //java
-						if(pessoaEstaLogada()){
-						 %>
 							<!--Opcoes se a pessoa estiver logada-->
 							<a href="#"><div class="opcao">Minhas compras</div></a>
 							<a href="#"><div class="opcao">Deslogar</div></a>
-						<%= } else { %>
 							<!--Opcoes se a pessoa não estiver logada-->
 							<a href="#"><div class="opcao">Login</div></a>
 							<a href="#"><div class="opcao">Cadastrar-se</div></a>
-						<%= } %>
 					</div>
 			</div>
 
