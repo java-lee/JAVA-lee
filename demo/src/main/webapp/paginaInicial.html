@@ -3,7 +3,7 @@
 <title>Titulo bonito</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="arquivosCss/paginaInicial.css">
+<link rel="stylesheet" type="text/css" href="arquivosCss/header.css">
 </head>
 <body>
 	<script src="https://kit.fontawesome.com/1e622caf46.js"></script>
@@ -13,13 +13,16 @@
 			<div id="logo">
 				<img src='icones/logo.png'/>
 			</div>
-			<div id="barraMobile">
-				<i class="fas fa-bars"></i>
-			</div>
+			<label for="checkboxMobile">
+				<div id="barraMobile">
+					<i class="fas fa-bars"></i>
+				</div>
+			</label>
+			<input type="checkbox" id="checkboxMobile">
 			<ul>
 				<li>Pagina Inicial</li>
-				<li></li>
-				<li></li>
+				<li>Roupas</li>
+				<li>Blusas</li>
 				<li>Sobre nos</li>
 			</ul>
 
@@ -27,7 +30,7 @@
 				<label id="statusCliente" for="checkbox">
 					<!-- Icone do simbolo do cliente -->
 					<i class="fas fa-user"></i>
-					Logado como xxx
+					<span id="statusLogin logado">Entrar ou Cadastrar-se</span>
 					<!-- Setinha para baixo -->
 					<i class="fas fa-sort-down"></i>
 				</label>
@@ -37,8 +40,8 @@
 							<a href="#"><div class="opcao">Minhas compras</div></a>
 							<a href="#"><div class="opcao">Deslogar</div></a>
 							<!--Opcoes se a pessoa não estiver logada-->
-							<a href="#"><div class="opcao">Login</div></a>
-							<a href="#"><div class="opcao">Cadastrar-se</div></a>
+							<a href="user/logar"><div class="opcao">Login</div></a>
+							<a href="user/cadastrar"><div class="opcao">Cadastrar-se</div></a>
 					</div>
 			</div>
 
@@ -76,7 +79,40 @@
 				&lt;artifactId&gt;spring-cloud-starter-security&lt;/artifactId&gt;
 			&lt;/dependency&gt;
 		</li>
-		<br>
-		<a href="inicial">Ir para os arquivos com java</a>
+	</ul>
+	<br>
+	<a href="inicial">Ir para os arquivos com java</a>
+	<script>
+	window.onload = fazerAjax;
+	
+	//Ver se a pessoa Logou no facebook
+	function fazerAjax(){
+		// Exemplo de requisição GET
+		var ajax = new XMLHttpRequest();
+
+		// Seta tipo de requisição e URL com os parâmetros
+		ajax.open("GET", "/user/sessaoFace", true);
+
+		// Envia a requisição
+		ajax.send();
+
+		// Cria um evento para receber o retorno.
+		ajax.onreadystatechange = function() {
+		  
+		  // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
+			if (ajax.readyState == 4 && ajax.status == 200) {
+		    
+				var data = JSON.parse(ajax.responseText);
+				
+		    	//Retorno do Ajax
+		    	if(data.userAuthentication.details != null){
+					console.log(data.userAuthentication.details);
+		    	}
+			}
+		}
+	}
+	
+	</script>
+	
 </body>
 </html>
