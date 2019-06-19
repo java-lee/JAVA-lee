@@ -12,6 +12,7 @@ public class evento {
     @RequestMapping("/")
     public String teste(){
     	System.out.println("Entrou no principal!!");
+    	connection c1= new connection();
         return "paginaInicial.html";
     }
 	
