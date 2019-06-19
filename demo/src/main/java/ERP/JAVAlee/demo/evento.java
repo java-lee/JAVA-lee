@@ -2,6 +2,7 @@ package ERP.JAVAlee.demo;
 
 
 import java.security.Principal;
+import java.sql.SQLException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,6 @@ public class evento {
     @RequestMapping("/")
     public String teste(){
     	System.out.println("Entrou no principal!!");
-    	connection c1= new connection();
         return "paginaInicial.html";
     }
 	
@@ -34,5 +34,21 @@ public class evento {
         return "dataagr.jsp";
     }
     
+    @RequestMapping("/user/mandarDados")
+    public boolean inserirBd() {
+    	System.out.println("MandarDados recebido");
+    	try {
+    		String nome = "Jose";
+        	String senha = "123";
+        	BdControler bd = new BdControler();
+			bd.inserirDados("INSERT INTO `login`(`log_user`, `log_senha`, `log_permissao`, `log_ativo`) VALUES ('" + nome + "', " + senha + ", " + Permissoes.cliente() + ", " + 1 + ");");
+			System.out.println("Passou no inserirDados!!");
+			return true;
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			return false;
+		}
+    }
     
 }

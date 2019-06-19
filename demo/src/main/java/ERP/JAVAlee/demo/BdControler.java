@@ -1,16 +1,12 @@
 package ERP.JAVAlee.demo;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import com.mysql.jdbc.PreparedStatement;
-
-import java.sql.DriverManager;
-import java.sql.SQLException;
-	public class connection {
+	public class BdControler {
 	private Connection con;
-	public void abriConexao(){ 
+	private void abriConexao(){ 
 		try {
 			String url= "jdbc:mysql://localhost:3306/banco";
 			String driver = "com.mysql.jdbc.Driver";
@@ -29,20 +25,23 @@ import java.sql.SQLException;
 			e.printStackTrace();
 		}
 	}
-	public void inserirDados(String sql) {
+	public void inserirDados(String sql) throws SQLException{
 		abriConexao();
+		System.out.println("Sql sem retorno recebido : " + sql);
 		PreparedStatement ps = con.prepareStatement(sql);
+		System.out.println("parte1");
 		ps.execute();
+		System.out.println("parte2");
+		ps.close();
+		System.out.println("parte3");
 		fecharConexao();
+		System.out.println("parte4");
 	}
-	public ResultSet receberDados(String sql) {
+	public ResultSet receberDados(String sql) throws SQLException {
+		System.out.println("Sql com retorno recebido : " + sql);
 		PreparedStatement ps = con.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
 		return(rs);
-		
-	}
-	public void setLogin() {
-		
 	}
 }
 

@@ -232,7 +232,32 @@
 
 			//codigo que cadastra no bd ficaria aqui ..
 			//xx
-		});
+			// Exemplo de requisição GET
+			//ajax
+			var ajax = new XMLHttpRequest();
+	
+			// Seta tipo de requisição e URL com os parâmetros
+			ajax.open("GET", "/user/mandarDados", true);
+	
+			// Envia a requisição
+			ajax.send();
+	
+			// Cria um evento para receber o retorno.
+			ajax.onreadystatechange = function() {
+			  
+			  // Caso o state seja 4 e o http.status for 200, é porque a requisiçõe deu certo.
+				if (ajax.readyState == 4 && ajax.status == 200) {
+			    
+					var data = ajax.responseText;
+					
+			    	//Retorno do Ajax
+			    	if(data.userAuthentication.details != null){
+						console.log(JSON.parse(data.userAuthentication.details));
+			    	}
+				}
+			}
+				
+			});
 
 
 	</script>
